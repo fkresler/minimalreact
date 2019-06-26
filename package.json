@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "private": true,
   "description": "",
-  "main": "index.js",
+  "main": "./app/index.jsx",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
+    "build": "npm run build:only",
+    "build:only": "webpack --config webpack.prod.js",
+    "build:full": "npm run lint && npm run test && npm run build:only",
     "lint": "eslint server/**/*.js app/**/*.js app/**/*.jsx",
-    "lint-fix": "eslint server/**/*.js app/**/*.js app/**/*.jsx --fix",
-    "test": "jest --coverage",
-    "start": "npm run start-dev",
-    "start-dev": "webpack-dev-server  --config webpack.dev.js --open",
-    "start-prod": "npm run build && node server"
+    "lint:fix": "eslint server/**/*.js app/**/*.js app/**/*.jsx --fix",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "start": "npm run start:dev",
+    "start:dev": "webpack-dev-server --config webpack.dev.js --open",
+    "start:prod": "node server",
+    "start:full": "npm run build:full && npm run start:prod"
   },
   "keywords": [],
   "author": "Fabian Kresler",
@@ -22,6 +26,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.0.0",
     "eslint": "^6.0.1",
@@ -46,6 +51,7 @@
     "express": "^4.17.1",
     "path": "^0.12.7",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.3.2"
   }
 }
