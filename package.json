@@ -5,12 +5,13 @@
   "description": "",
   "main": "./app/index.jsx",
   "scripts": {
+    "clean": "rm -rf build/ coverage/ node_modules/",
     "build": "npm run build:only",
     "build:only": "webpack --config webpack.prod.js",
     "build:full": "npm run lint && npm run test && npm run build:only",
     "lint": "eslint server/**/*.js app/**/*.js app/**/*.jsx",
     "lint:fix": "eslint server/**/*.js app/**/*.js app/**/*.jsx --fix",
-    "test": "jest",
+    "test": "npm run test:coverage",
     "test:coverage": "jest --coverage",
     "start": "npm run start:dev",
     "start:dev": "webpack-dev-server --config webpack.dev.js --open",
@@ -50,6 +51,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "path": "^0.12.7",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "styled-components": "^4.3.2"
