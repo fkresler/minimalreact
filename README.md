@@ -83,6 +83,7 @@ What is actually included?
 * Code coverage reports created by jest
 * Babel as a tanspiling tool to make your new and fancy Javascript code work
 * Providing a base setup for your node server in production based on express
+* Storybook to describe your components in a visual way
 
 
 ## Contributing
