@@ -71,6 +71,12 @@ production dependencies):
 npm run start:prod
 ```
 
+Also in case you want to start the Storybook of the project you have to run:
+
+```shell
+npm run storybook
+```
+
 
 ## Features
 
