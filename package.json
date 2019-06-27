@@ -13,6 +13,7 @@
     "lint:fix": "eslint server/**/*.js app/**/*.js app/**/*.jsx --fix",
     "test": "npm run test:coverage",
     "test:coverage": "jest --coverage",
+    "storybook": "start-storybook",
     "start": "npm run start:dev",
     "start:dev": "webpack-dev-server --config webpack.dev.js --open",
     "start:prod": "node server",
